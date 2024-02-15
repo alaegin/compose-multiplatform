@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
@@ -51,7 +52,7 @@ internal inline fun Messages(messages: List<Message>) {
 fun UserPic(user: User) {
     val imageSize = 48f
     val painter = user.picture?.let {
-        painterResource(it)
+        painterResource(DrawableResource(it))
     } ?: object : Painter() {
         override val intrinsicSize: Size = Size(imageSize, imageSize)
         override fun DrawScope.onDraw() {

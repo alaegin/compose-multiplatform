@@ -1,20 +1,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var toggle: Bool = false
+
     var body: some View {
-        TabView {
-            ComposeInsideSwiftUIScreen()
-                .tabItem {
-                    Label("Group Chat", systemImage: "rectangle.3.group.bubble.left")
-                }
+        ZStack {
+            if toggle {
+                ComposeInsideSwiftUIScreen()
+            } else {
+                YetAnotherSwiftUIScreen()
+            }
 
-            YetAnotherSwiftUIScreen()
-                .tabItem {
-                    Label("Settings", systemImage: "gear")
-                }
-
+            Button("Toggle", action: { toggle = !toggle })
         }
-            .accentColor(Color(red: 0.671, green: 0.365, blue: 0.792)).preferredColorScheme(.light)
     }
 }
 

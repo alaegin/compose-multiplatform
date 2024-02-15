@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
+import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
@@ -66,7 +67,7 @@ fun ChatApp(displayTextField: Boolean = true) {
     Theme {
         Surface {
             Box(modifier = Modifier.fillMaxSize()) {
-                Image(painterResource("background.jpg"), null, contentScale = ContentScale.Crop)
+                Image(painterResource(DrawableResource("background.jpg")), null, contentScale = ContentScale.Crop)
                 Column(
                     modifier = Modifier.fillMaxSize()
                 ) {
